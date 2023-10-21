@@ -1,5 +1,7 @@
 import Footer from "../shared/Footer/Footer";
 import Navbar from "../shared/Navbar/Navbar";
+import Swal from "sweetalert2";
+
 
 const handleAddProduct = (event) => {
   event.preventDefault();
@@ -7,13 +9,32 @@ const handleAddProduct = (event) => {
         const name = form.name.value;
         const brandName = form.brandName.value;
         const price = form.price.value;
-        const type = form.type.value;
+        const category = form.category.value;
         const photo = form.photo.value;
         const rating = form.rating.value;
         const description = form.description.value;
 
-        const newProduct = {name, brandName, price, type, rating, description, photo};
+        const newProduct = {name, brandName, price, category, rating, description, photo};
         console.log(newProduct)
+
+        fetch('http://localhost:5000/car',{
+          method: "POST",
+          headers: {
+            'content-type': 'application/json'
+          },
+          body: JSON.stringify(newProduct)
+        })
+        .then(res=> res.json())
+        .then(data=>{
+          console.log(data)
+          Swal.fire({
+            title: 'Success!',
+            text: 'Added Product Successfully',
+            icon: 'success',
+            confirmButtonText: 'Close'
+          })
+  
+        })
 };
 
 const AddProduct = () => {
@@ -71,13 +92,13 @@ const AddProduct = () => {
             </div>
             <div className="form-control md:w-1/2 ml-4">
               <label className="label">
-                <span className="label-text">Type</span>
+                <span className="label-text">Category</span>
               </label>
               <label className="input-group">
                 <input
-                  name="type"
+                  name="category"
                   type="text"
-                  placeholder="Type"
+                  placeholder="Category"
                   className="input input-bordered w-full"
                 />
               </label>

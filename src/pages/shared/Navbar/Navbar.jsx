@@ -21,6 +21,9 @@ const Navbar = () => {
       <li>
         <NavLink to={"/addProduct"}>Add Product</NavLink>
       </li>
+      <li>
+        <NavLink to={"/addBrand"}>Add Brand</NavLink>
+      </li>
       {/* <li>
         {
           user&& <NavLink to={"/enrolled"}>My Cart</NavLink> 
