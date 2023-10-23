@@ -1,17 +1,17 @@
 import { Link, NavLink } from 'react-router-dom';
 import userDeafultPic from "../../../assets/user.png"
 import logo from "../../../assets/icon+.png"
-// import { AuthContext } from '../../../providers/AuthProviders';
-// import { useContext } from 'react';
+import { AuthContext } from '../../../providers/AuthProvider';
+import { useContext } from 'react';
 
 const Navbar = () => {
-  // const { user, logOut } = useContext(AuthContext);
+  const { user, logOut } = useContext(AuthContext);
 
-  // const handleSignOut = () => {
-  //   logOut()
-  //    .then()
-  //    .catch();
-  // };
+  const handleSignOut = () => {
+    logOut()
+     .then()
+     .catch();
+  };
 
     const navLinks =(
         <>
@@ -27,11 +27,6 @@ const Navbar = () => {
       <li>
         <NavLink to={"/addBrand"}>Add Brand</NavLink>
       </li>
-      {/* <li>
-        {
-          user&& <NavLink to={"/enrolled"}>My Cart</NavLink> 
-        }
-      </li> */}
       <li>
         <NavLink to={"/login"}>login</NavLink>
       </li>
@@ -67,7 +62,7 @@ const Navbar = () => {
             <img src={userDeafultPic} />
           </div>
         </label>
-        {/* {user ? (
+        {user ? (
           <button onClick={handleSignOut} className="btn">
             Sign Out
           </button>
@@ -75,7 +70,7 @@ const Navbar = () => {
           <Link to={"/login"}>
             <button className="btn">Login</button>
           </Link>
-        )} */}
+        )}
       </div>
 </div>
     );

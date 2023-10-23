@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 const Banner = () => {
   return (
     <div
@@ -27,7 +29,9 @@ const Banner = () => {
             The automotive industry continues to evolve at a rapid pace, with advancements in electric and autonomous vehicles reshaping the way we drive. Electric cars are becoming more accessible, offering eco-friendly options that reduce our carbon footprint.
           </p>
           <button className="btn bg-pink-500 border-none text-white hover:bg-pink-600 mr-2">Details</button>
+          <Link to={'/login'}>
           <button className="btn bg-pink-500 border-none text-white hover:bg-pink-600">Login</button>
+          </Link>
         </div>
       </div>
     </div>

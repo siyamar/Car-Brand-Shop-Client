@@ -45,7 +45,7 @@ const Register = () => {
       <Navbar></Navbar>
       <div>
         <h2 className="text-3xl font-extrabold mt-10 text-center">Please Register</h2>
-        <form onSubmit={handleRegister} className="md:w-3/4 lg:w-1/2 mx-auto">
+        <form onSubmit={handleRegister} className="p-4 md:w-3/4 lg:w-1/2 mx-auto">
           <div className="form-control">
             <label className="label">
               <span className="label-text">Name</span>
@@ -82,20 +82,8 @@ const Register = () => {
               required
             />
           </div>
-          <div className="form-control">
-            <label className="label">
-              <span className="label-text">Photo URL</span>
-            </label>
-            <input
-              type="text"
-              name="photo"
-              placeholder="Photo URL"
-              className="input input-bordered"
-              required
-            />
-          </div>
           <div className="form-control mt-6">
-            <button className="btn btn-primary">Register</button>
+            <button className="btn bg-black text-white hover:bg-black">Register</button>
           </div>
         </form>
         <p className="text-center mt-4">

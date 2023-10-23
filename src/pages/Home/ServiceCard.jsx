@@ -6,7 +6,7 @@ import warrenty from "../../assets/Service/4.png"
 
 const ServiceCard = () => {
     return (
-        <div className="flex px-28 gap-6 justify-between bg-slate-200 py-8 mb-6">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 px-28 gap-6 justify-between bg-slate-200 py-8 mb-6">
             {/* service */}
             <div>
                 <img className="w-24" src={service} alt="" />

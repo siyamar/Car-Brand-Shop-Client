@@ -13,7 +13,7 @@ const Home = () => {
             <Banner></Banner>
             <ServiceCard></ServiceCard>
             {/* <Cart loadedBrand={loadedBrand}></Cart> */}
-            <div className="grid md:grid-cols-3 gap-6 mt-10">
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mt-10">
             {
                 loadedBrand.map(brand=><Cart key={brand._id} brand={brand}></Cart>)
             }

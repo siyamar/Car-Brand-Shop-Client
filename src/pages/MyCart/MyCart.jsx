@@ -50,7 +50,7 @@ const handleDelete=(_id)=>{
         <table className="table">
           {/* head */}
           <thead>
-            <tr className="text-2xl">
+            <tr className="md:text-2xl">
               <th>Photo</th>
               <th>Name</th>
               <th>Brand Name</th>
@@ -61,7 +61,7 @@ const handleDelete=(_id)=>{
           <tbody>
             {/* row 1 */}
             {cars.map((car) => (
-              <tr key={car._id} className="text-xl">
+              <tr key={car._id} className="md:text-xl">
                 <td>
                   <img className="w-28" src={car.photo} alt="" />
                 </td>
