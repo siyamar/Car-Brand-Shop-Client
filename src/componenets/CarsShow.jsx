@@ -14,10 +14,10 @@ const CarsShow = () => {
       <Navbar></Navbar>
       <AdvertisingSlider></AdvertisingSlider>
       <div className="text-center mx-36">
-      <h2 className="text-5xl font-bold mt-8">Best Product</h2>
+      <h2 className="text-5xl font-bold mt-8">Our Best Product</h2>
       <p className="mb-8">Preparing them used to take up to two days. Not anymore! Bring your car sales photography to the next level by delivering high-quality cutouts for classifieds</p>
       </div>
-      <div className="grid md:grid-cols-3 gap-4 mb-8">
+      <div className="grid md:grid-cols-1 gap-4 mb-8">
         {loadedCars.map(car => 
           car.category == id &&
           <CarCards

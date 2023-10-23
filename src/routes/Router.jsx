@@ -7,6 +7,8 @@ import Register from "../pages/Register/Register";
 import CarsShow from "../componenets/CarsShow";
 import AddBrand from "../pages/AddBrand/AddBrand";
 import CarShowDetails from "../componenets/CarShowDetails";
+import MyCart from "../pages/MyCart/MyCart";
+import UpdateProduct from "../componenets/UpdateProduct";
 
 
   const router = createBrowserRouter([
@@ -24,8 +26,18 @@ import CarShowDetails from "../componenets/CarShowDetails";
             element: <AddProduct></AddProduct>
         },
         {
+            path: '/updateProduct/:id',
+            element: <UpdateProduct></UpdateProduct>,
+            loader: ({params})=> fetch(`http://localhost:5000/car/${params.id}`)
+        },
+        {
             path: '/addBrand',
             element: <AddBrand></AddBrand>
+        },
+        {
+            path: '/myCart',
+            element: <MyCart></MyCart>,
+            loader: ()=> fetch('http://localhost:5000/myCart')
         },
         {
             path: '/login',
@@ -43,7 +55,7 @@ import CarShowDetails from "../componenets/CarShowDetails";
         {
             path: '/showDetails/:id',
             element: <CarShowDetails></CarShowDetails>,
-            loader: ({params})=> fetch(`http://localhost:5000/${params.id}`)
+            loader: ({params})=> fetch(`http://localhost:5000/car/${params.id}`)
         },
       ]
     }
