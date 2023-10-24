@@ -7,6 +7,8 @@ const Login = () => {
   const { signInUser, signInWithGoogle } = useContext(AuthContext);
   const location = useLocation();
   const navigate = useNavigate();
+  const [loginError, setLoginError] = useState('');
+
 
   const handleLogin = (event) => {
     event.preventDefault();
@@ -14,6 +16,9 @@ const Login = () => {
     const email = form.email.value;
     const password = form.password.value;
     console.log(email, password);
+
+     //reset error
+     setLoginError('')
 
     signInUser(email, password)
       .then((result) => {
@@ -23,6 +28,7 @@ const Login = () => {
       })
       .catch((error) => {
         console.log(error);
+        setLoginError(error.message)
       });
   };
 
@@ -72,6 +78,9 @@ const Login = () => {
             </button>
           </div>
         </form>
+        {
+          loginError && <p className="text-red-700 text-center mt-4">{loginError}</p>
+        }
         <div className="flex items-center justify-center gap-6">
           <p className="text-center mt-4">
             Do not have an account?{" "}
