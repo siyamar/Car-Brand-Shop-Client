@@ -1,10 +1,11 @@
 import { Link } from "react-router-dom";
 import Navbar from "../shared/Navbar/Navbar";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { AuthContext } from "../../providers/AuthProvider";
 import Swal from "sweetalert2";
 
 const Register = () => {
+  const [registerError, setRegisterError] = useState('');
   const { createUser } = useContext(AuthContext);
 
   const handleRegister = (event) => {
@@ -13,9 +14,17 @@ const Register = () => {
     const name = form.name.value;
     const email = form.email.value;
     const password = form.password.value;
-    const photo = form.photo.value;
-    const user = { name, email, password, photo };
+    const user = { name, email, password, };
     console.log(user);
+
+     //reset error
+     setRegisterError('')
+
+    if(password.length<6){
+      setRegisterError('Password should be at least 6 characters or longer!!');
+      return;
+    }
+
 
     createUser(email, password)
       .then((result) => {
@@ -30,12 +39,13 @@ const Register = () => {
       })
       .catch((error) => {
         console.error(error);
-        Swal.fire({
-          title: 'Error!',
-          text: 'Already Sign Up',
-          icon: 'error',
-          confirmButtonText: 'X'
-        })
+        setRegisterError(error.message)
+        // Swal.fire({
+        //   title: 'Error!',
+        //   text: {registerError},
+        //   icon: 'error',
+        //   confirmButtonText: 'X'
+        // })
 
       });
 
@@ -86,12 +96,16 @@ const Register = () => {
             <button className="btn bg-black text-white hover:bg-black">Register</button>
           </div>
         </form>
-        <p className="text-center mt-4">
+        
+        <p className="text-center">
           Already have an account?{" "}
           <Link className="text-blue-500" to={"/login"}>
             Login
           </Link>
         </p>
+        {
+          registerError && <p className="text-red-700 text-center mt-4">{registerError}</p>
+        }
       </div>
     </div>
   );
