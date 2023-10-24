@@ -1,8 +1,7 @@
-# React + Vite
-
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
-
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+--> This website mainly promotes few car brands.
+--> Clicking on each car brand will show the brand's products.
+--> Again clicking on each bet will show its details.
+--> From the details page we can My Card the products and from there we can view them later by going to the My Card page and delete them from there.
+--> Some pages are routed private where no one can access without logging in
+--> Both night mode and dark mode are available.
+--> There are three types of collections in the database, one is My Cart Collection, Car Brand Collection and Car Collection.
