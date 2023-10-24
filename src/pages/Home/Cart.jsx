@@ -22,7 +22,7 @@ const Cart = ({brand}) => {
           />
         </figure>
         <div className="card-body">
-          <h2 className="card-title ">{brandName}</h2>
+          <h2 className="card-title text-white">{brandName}</h2>
         </div>
       </div>
         </Link>

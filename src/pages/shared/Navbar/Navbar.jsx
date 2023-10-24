@@ -2,10 +2,37 @@ import { Link, NavLink } from 'react-router-dom';
 import userDeafultPic from "../../../assets/user.png"
 import logo from "../../../assets/icon+.png"
 import { AuthContext } from '../../../providers/AuthProvider';
-import { useContext } from 'react';
+import { useContext, useEffect, useState } from 'react';
+import { CiDark, CiLight } from 'react-icons/ci';
 
 const Navbar = () => {
   const { user, logOut } = useContext(AuthContext);
+  const [mode, setMode] = useState('light')
+
+const changeMode = () =>{
+  const html = document.documentElement;
+
+  if(mode =='light'){
+    html.classList.remove('light');
+    html.classList.add('dark');
+    setMode('dark');
+    localStorage.setItem("mode", "dark")
+  }
+  else{
+    html.classList.remove('dark');
+    html.classList.add('light');
+    setMode('light');
+    localStorage.setItem("mode", "light")
+
+  }
+}
+
+useEffect(()=>{
+  const currentMode = localStorage.getItem("mode") || "light";
+  document.documentElement.classList.add(currentMode)
+  setMode(currentMode)
+  
+},[])
 
   const handleSignOut = () => {
     logOut()
@@ -36,7 +63,7 @@ const Navbar = () => {
         </>
     )
     return (
-        <div className="navbar bg-slate-100">
+        <div className="navbar bg-slate-100 dark:bg-slate-800 text-black dark:text-white">
   <div className="navbar-start">
     <div className="dropdown">
       <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -71,6 +98,7 @@ const Navbar = () => {
             <button className="btn">Login</button>
           </Link>
         )}
+        <button className='text-2xl m-5' onClick={changeMode}>{mode==="dark" ? <CiLight></CiLight>: <CiDark></CiDark>}</button>
       </div>
 </div>
     );

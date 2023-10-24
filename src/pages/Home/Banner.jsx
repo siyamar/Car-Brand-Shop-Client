@@ -13,7 +13,7 @@ const Banner = () => {
       <div className="hero-content text-neutral-content">
         <div className="max-w-lg">
           <h1
-            className="mb-5 text-5xl font-bold"
+            className="mb-5 text-5xl font-bold text-white"
             data-aos="fade-left"
             data-aos-offset="300"
             data-aos-easing="ease-in-sine"
@@ -21,7 +21,7 @@ const Banner = () => {
             Automotive
           </h1>
           <p
-            className="mb-5"
+            className="mb-5 text-white"
             data-aos="fade-up"
             data-aos-offset="300"
             data-aos-easing="ease-in-sine"

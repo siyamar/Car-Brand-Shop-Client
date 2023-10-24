@@ -6,10 +6,10 @@ import warrenty from "../../assets/Service/4.png"
 
 const ServiceCard = () => {
     return (
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 px-28 gap-6 justify-between bg-slate-200 py-8 mb-6">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 px-28 gap-6 justify-between dark:text-white dark:bg-slate-800 text-black bg-slate-200 py-8 mb-6">
             {/* service */}
-            <div>
-                <img className="w-24" src={service} alt="" />
+            <div className="dark:text-white">
+                <img className="w-24 " src={service} alt="" />
                 <h2 className="text-2xl font-bold">Services</h2>
                 <p>AI-driven text generation, answers, and information.</p>
             </div>

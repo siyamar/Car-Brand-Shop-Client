@@ -5,7 +5,7 @@ import cart6 from "../../assets/Pic/7.avif"
 const TopSels = () => {
   return (
     <div>
-      <div className="text-center mt-12 mb-6">
+      <div className="text-center mt-12 mb-6 text-white">
         <h2 className="text-3xl font-bold">Top Sales</h2>
         <p className="text-sm">
           Efficient, sleek vehicles offering comfort, speed, and advanced safety

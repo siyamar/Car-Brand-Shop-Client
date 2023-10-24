@@ -34,6 +34,7 @@ import PrivateRoute from "./PrivateRoute";
             loader: ({params})=> fetch(`http://localhost:5000/car/${params.id}`)
         },
         {
+            
             path: '/addBrand',
             element: <PrivateRoute><AddBrand></AddBrand></PrivateRoute>
         },
