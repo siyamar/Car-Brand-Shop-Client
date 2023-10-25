@@ -1,6 +1,6 @@
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import Navbar from "../shared/Navbar/Navbar";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { AuthContext } from "../../providers/AuthProvider";
 
 const Login = () => {
@@ -16,13 +16,14 @@ const Login = () => {
     const email = form.email.value;
     const password = form.password.value;
     console.log(email, password);
-
+    event.target.reset();
      //reset error
      setLoginError('')
 
     signInUser(email, password)
       .then((result) => {
         console.log(result.user);
+        
         //navigate after login
         navigate(location?.state ? location.state : "/");
       })
@@ -34,6 +35,7 @@ const Login = () => {
 
   const handleGoogleSignIn = () => {
     signInWithGoogle().then().catch();
+
   };
   return (
     <div className="max-w-6xl mx-auto">
