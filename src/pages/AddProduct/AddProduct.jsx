@@ -17,7 +17,7 @@ const handleAddProduct = (event) => {
         const newProduct = {name, brandName, price, category, rating, description, photo};
         console.log(newProduct)
 
-        fetch('http://localhost:5000/car',{
+        fetch('https://ass-10-brand-shop-server-6fog8l0wi-abdurs-projects.vercel.app/car',{
           method: "POST",
           headers: {
             'content-type': 'application/json'

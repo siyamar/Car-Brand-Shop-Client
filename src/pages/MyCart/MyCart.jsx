@@ -21,7 +21,7 @@ const handleDelete=(_id)=>{
     }).then((result) => {
       if (result.isConfirmed) {
        
-        fetch(`http://localhost:5000/myCart/${_id}`, {
+        fetch(`https://ass-10-brand-shop-server-6fog8l0wi-abdurs-projects.vercel.app/myCart/${_id}`, {
           method: 'delete',
 
         })

@@ -22,7 +22,7 @@ import PrivateRoute from "./PrivateRoute";
         {
             path: '/',
             element: <Home></Home>,
-            loader: ()=> fetch('http://localhost:5000/carBrand')
+            loader: ()=> fetch('https://ass-10-brand-shop-server-6fog8l0wi-abdurs-projects.vercel.app/carBrand')
         },
         {
             path: '/addProduct',
@@ -31,7 +31,7 @@ import PrivateRoute from "./PrivateRoute";
         {
             path: '/updateProduct/:id',
             element: <PrivateRoute><UpdateProduct></UpdateProduct></PrivateRoute>,
-            loader: ({params})=> fetch(`http://localhost:5000/car/${params.id}`)
+            loader: ({params})=> fetch(`https://ass-10-brand-shop-server-6fog8l0wi-abdurs-projects.vercel.app/car/${params.id}`)
         },
         {
             
@@ -41,7 +41,7 @@ import PrivateRoute from "./PrivateRoute";
         {
             path: '/myCart',
             element: <PrivateRoute><MyCart></MyCart></PrivateRoute>,
-            loader: ()=> fetch('http://localhost:5000/myCart')
+            loader: ()=> fetch('https://ass-10-brand-shop-server-6fog8l0wi-abdurs-projects.vercel.app/myCart')
         },
         {
             path: '/login',
@@ -54,12 +54,12 @@ import PrivateRoute from "./PrivateRoute";
         {
             path: '/carsShow/:id',
             element: <CarsShow></CarsShow>,
-            loader: ()=> fetch('http://localhost:5000/car')
+            loader: ()=> fetch('https://ass-10-brand-shop-server-6fog8l0wi-abdurs-projects.vercel.app/car')
         },
         {
             path: '/showDetails/:id',
             element: <PrivateRoute><CarShowDetails></CarShowDetails></PrivateRoute>,
-            loader: ({params})=> fetch(`http://localhost:5000/car/${params.id}`)
+            loader: ({params})=> fetch(`https://ass-10-brand-shop-server-6fog8l0wi-abdurs-projects.vercel.app/car/${params.id}`)
         },
       ]
     }

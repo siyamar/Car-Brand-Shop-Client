@@ -11,7 +11,7 @@ const CarShowDetails = () => {
     console.log(id, car)
 
     const handleAddCart= ()=>{
-        fetch('http://localhost:5000/myCart', {
+        fetch('https://ass-10-brand-shop-server-6fog8l0wi-abdurs-projects.vercel.app/myCart', {
         method: 'post',
         headers: {
             'content-type': 'application/json'

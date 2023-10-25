@@ -13,7 +13,7 @@ const handleAddBrand = (event) => {
         const newBrand = {brandName, category, photo};
         console.log(newBrand)
 
-        fetch('http://localhost:5000/carBrand',{
+        fetch('https://ass-10-brand-shop-server-6fog8l0wi-abdurs-projects.vercel.app/carBrand',{
           method: "POST",
           headers: {
             'content-type': 'application/json'
